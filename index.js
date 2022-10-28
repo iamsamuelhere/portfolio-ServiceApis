@@ -1,11 +1,11 @@
+require('dotenv').config()
 const express = require("express")
 const app = express()
-
 const PORT = process.env.PORT || 3000;
+const mailRoutes = require("./routes/mailRoutes");
 
-app.get("/",(req,res)=>{
-    res.send("auto deploy check")
-})
+app.use(express.json())
+app.use("/sendMail",mailRoutes)
 
 app.listen(PORT,()=>{
     console.log(`Server started at: ${PORT}`)
