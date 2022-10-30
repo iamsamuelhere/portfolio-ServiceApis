@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 const mailRoutes = require("./routes/mailRoutes");
 
 app.use(express.json())
-app.use("/sendMail",mailRoutes)
+app.use("/sendmail",mailRoutes)
 
 app.listen(PORT,()=>{
     console.log(`Server started at: ${PORT}`)
