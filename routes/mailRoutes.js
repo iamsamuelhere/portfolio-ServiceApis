@@ -4,7 +4,7 @@ const cors = require("cors")
 const {sendMail} = require("../controllers/mailControllers");
 
 var corsOptions = {
-    origin: 'https://iamsamuelhere.github.io/portfolio/',
+    origin: [process.env.PROD_SITE, process.env.DEV_SITE],
     optionsSuccessStatus: 200
 }
 
