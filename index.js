@@ -4,11 +4,12 @@ const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 3000;
 const mailRoutes = require("./routes/mailRoutes");
+const {getFirebaseConfig} = require("./controllers/firebaseConfig");
 
 app.use(cors())
 app.use(express.json())
 
-
+app.get("/firebase-config",getFirebaseConfig);
 app.use("/sendmail", mailRoutes)
 
 app.listen(PORT, () => {
