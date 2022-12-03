@@ -9,6 +9,7 @@ const {getFirebaseConfig} = require("./controllers/firebaseConfig");
 app.use(cors())
 app.use(express.json())
 
+app.get("/test-deploy",(req,res)=>{res.send("Tested")});
 app.get("/firebase-config",getFirebaseConfig);
 app.use("/sendmail", mailRoutes)
 
